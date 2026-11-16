@@ -1,0 +1,13 @@
+name: Despertar Backend Render
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping al servidor Render
+        run: curl -s https://cocalbussines.onrender.com/api/docs/ > /dev/null
